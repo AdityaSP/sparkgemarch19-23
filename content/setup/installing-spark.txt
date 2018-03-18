@@ -1,0 +1,11 @@
+sudo apt-get update
+sudo apt-get install python3-pip
+pip3 install jupyter
+sudo apt-get install default-jre
+sudo apt-get install scala
+pip3 install py4j
+wget http://archive.apache.org/dist/spark/spark-2.1.1/spark-2.1.1-bin-hadoop2.7.tgz
+sudo tar -zxvf spark-2.1.1-bin-hadoop2.7.tgz
+export PYSPARK_PYTHON=python3
+alias cds='cd ~/spark-2.1.1-bin-hadoop2.7'
+mkdir logs

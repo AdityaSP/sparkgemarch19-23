@@ -1,0 +1,14 @@
+ubuntu@ip-172-31-88-235:~/spark-2.1.1-bin-hadoop2.7/conf$ cp spark-defaults.conf.template spark-defaults.conf
+
+vi spark-defaults.conf
+Add the below
+spark.eventLog.enabled          true
+spark.eventLog.dir              file:/tmp/spark-events
+spark.history.fs.logDirectory   file:/tmp/spark-events
+
+mkdir /tmp/spark-events/
+
+restart spark-master
+start history-server
+
+ubuntu@ip-172-31-88-235:~/spark-2.1.1-bin-hadoop2.7/sbin$ ./start-history-server.sh
