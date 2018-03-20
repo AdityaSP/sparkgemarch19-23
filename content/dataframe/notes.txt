@@ -1,0 +1,15 @@
+# import for sql types
+from pyspark.sql.types import StructField, StringType, IntegerType, StructType
+
+# import for rows
+from pyspark.sql.types import Row
+
+# creating a field
+StructField('Year',IntegerType(), True)
+
+# creating a schema
+data_schema = [StructField('Year',IntegerType(), True),
+               StructField('FirstName',StringType(),True),
+               StructField('County', StringType(),True),
+               StructField('Sex',StringType(),True),
+               StructField('Count',IntegerType(),True)]
