@@ -1,0 +1,8 @@
+# spark master ui
+http://<master ip>:8080/
+
+# spark history server url
+http://<master ip or dns>:18080/
+
+# spark slave url
+http://<slave ip or dns>:8081
