@@ -15,5 +15,6 @@ p = "root"
 dataframe_mysql = sqlContext.read.format("jdbc").option("url",jdbcurl).option("driver", jdbcdriver).option("dbtable", table).option("user", u).option("password", p).load()
 
 4.
+jdbcurl = "jdbc:mysql://localhost/baby"
 n = spark.createDataFrame([['Aditya'], ['Arun']], ['baby_name'])
 n.write.mode('append').format("jdbc").option("url",jdbcurl).option('dbtable','names').option('user','root').option('driver','com.mysql.jdbc.Driver').option('mode','append').option('password','root').save()
