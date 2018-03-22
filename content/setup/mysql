@@ -1,9 +1,18 @@
+1. Get connector jar
 wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.46.tar.gz
 
+2. tar vxf mysql-connector-java-5.1.46.tar.gz
+2. pro
+
+2. jdbc properties
 jdbcurl = "jdbc:mysql://localhost/mysql"
 jdbcdriver = "com.mysql.jdbc.Driver"
 table = "user"
 u = "root"
 p = "root"
 
+3. read from a table
 dataframe_mysql = sqlContext.read.format("jdbc").option("url",jdbcurl).option("driver", jdbcdriver).option("dbtable", table).option("user", u).option("password", p).load()
+
+4.
+n.write.mode('append').format("jdbc").option("url",jdbcurl).option('dbtable','names').option('user','root').option('driver','com.mysql.jdbc.Driver').option('mode','append').option('password','root').save()
