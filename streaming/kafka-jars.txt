@@ -3,3 +3,12 @@ wget http://central.maven.org/maven2/org/apache/spark/spark-streaming-kafka-asse
 wget http://central.maven.org/maven2/org/apache/spark/spark-core_2.11/1.5.2/spark-core_2.11-1.5.2.jar
 
 bin/spark-submit --jars  /home/ubuntu/spark-streaming-kafka-assembly_2.11-1.4.0.jar,/home/ubuntu/spark-core_2.11-1.5.2.jar   ~/kafka_wordcount.py  ec2-34-238-41-191.compute-1.amazonaws.com:2181 mar23
+
+
+wget http://www-us.apache.org/dist/kafka/1.0.1/kafka_2.11-1.0.1.tgz
+tar -xzf kafka_2.11-1.0.1.tgz
+nohup bin/zookeeper-server-start.sh config/zookeeper.properties > ~/zookeeper-logs &
+bin/kafka-server-start.sh config/server.properties > ~/kafka-logs &
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic mar22 
+bin/kafka-topics.sh --list --zookeeper localhost:2181
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic mar22
